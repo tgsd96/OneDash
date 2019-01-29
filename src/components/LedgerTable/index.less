@@ -1,0 +1,38 @@
+@import '~antd/lib/style/themes/default.less';
+
+.tabletr{
+
+    line-height: 6px;
+
+    td{
+        height: 20px;
+    }
+}
+:global{
+    .ant-input-disabled,.ant-select-disabled{
+        background-color: white;
+        color: black;
+        border: none;
+    }
+    .ant-select-disabled .ant-select-selection {
+         background: white;
+        cursor: not-allowed;
+        border: none;
+    }
+}
+
+.selectedAnt{
+    :global{
+        .ant-input-disabled,.ant-select-disabled{
+            background-color: rgb(230, 247, 255);
+            color: black;
+            border: none;
+        }
+        .ant-select-disabled .ant-select-selection {
+            background: rgb(230, 247, 255);
+            cursor: not-allowed;
+            border: none;
+        }
+    }
+}
+

@@ -1,0 +1,42 @@
+@import '~antd/lib/style/themes/default.less';
+
+.wrapper:focus{
+    outline: none;
+}
+
+.selected{
+    background-color: "#9cdf65"
+}
+
+.table {
+    width: 100%;
+    
+    // Cells
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      font-weight: bold;
+      background-color: #ecf0f3;
+      color:#4d6575;
+    }
+    // Bottom align for column headings
+    thead th {
+      vertical-align: bottom;
+    }
+    // Remove top border from thead by default
+    caption + thead tr:first-child th,
+    caption + thead tr:first-child td,
+    colgroup + thead tr:first-child th,
+    colgroup + thead tr:first-child td,
+    thead:first-child tr:first-child th,
+    thead:first-child tr:first-child td {
+      border-top: 0;
+    }
+    // Account for multiple tbody instances
+    tbody + tbody {
+    }
+  }

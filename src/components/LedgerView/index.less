@@ -1,0 +1,45 @@
+.table {
+  width: 100%;
+  border: 1px solid #b2b6b9;
+  border-radius: 10px;
+  padding: 8px;
+  height: 500px;
+  overflow-y: scroll;
+  background-color: white;
+  
+  // Cells
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  th {
+    font-weight: bold;
+    background-color: #ecf0f3;
+    color:#4d6575;
+  }
+  tr:hover td{
+    background: "#e6f7ff" !important;
+  }
+  td:hover{
+    background: transparent;
+  }
+  // Bottom align for column headings
+  thead th {
+    vertical-align: bottom;
+  }
+  // Remove top border from thead by default
+  caption + thead tr:first-child th,
+  caption + thead tr:first-child td,
+  colgroup + thead tr:first-child th,
+  colgroup + thead tr:first-child td,
+  thead:first-child tr:first-child th,
+  thead:first-child tr:first-child td {
+    border-top: 0;
+  }
+  // Account for multiple tbody instances
+  tbody + tbody {
+  }
+}
