@@ -20,38 +20,74 @@ export default [
       // dashboard
       { path: '/', redirect: '/dashboard/analysis' },
       {
+        path: '/bills/list',
+        name: 'List of Bills',
+        icon: 'bars',
+        component: './BillList',
+      },
+      {
         path: '/master',
-        name: 'Master',
+        name: 'Masters',
         icon: 'user',
-        component: './Masters/Master',
+        routes: [
+          {
+            path: '/master/all',
+            name: 'Profiles',
+            component: './Masters/Master',
+          },
+          {
+            path: '/master/outstanding',
+            name: 'Outstanding Accounts',
+            component: './Masters/Outstanding',
+          },
+          {
+            path: '/master/details/:id',
+            name: 'Master Details',
+            hideInMenu: true,
+            component: './Masters/details/MasterDetail',
+          },
+        ],
       },
       {
         path: '/ledger',
         name: 'Ledger',
         icon: 'book',
-        routes:[
+        routes: [
           {
             path: '/ledger/create',
             name: 'Create',
-            component: './Ledger/Ledger'
+            component: './Ledger/Ledger',
           },
           {
             path: '/ledger/display',
             name: 'Display',
-            component: './Ledger/AllLedger'
-          }
-        ]
-      },
-      {
-        path : '/master/:id',
-        name: 'Master Details',
-        hideInMenu: true,
-        component: './Masters/MasterDetail'
+            component: './Ledger/AllLedger',
+          },
+        ],
       },
       {
         path: '/uploads',
         icon: 'upload',
-        name: 'Upload'
+        name: 'Upload',
+        routes: [
+          {
+            path: '/uploads/sales',
+            name: 'Upload Sales',
+            component: './Uploads/salesUpload',
+          },
+          {
+            path: '/uploads/sales/columns',
+            hideInMenu: true,
+            name: 'Select Upload Columns',
+            component: './Uploads/salesColSelect',
+          },
+          {
+            path: '/uploads/sales/result',
+            name: 'Result-Sales',
+            component: './Uploads/salesResult',
+            hideInMenu: true,
+          },
+        ],
       },
       {
         path: '/dashboard',
